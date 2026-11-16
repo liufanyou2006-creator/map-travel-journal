@@ -5,3 +5,9 @@
 
 .location-design-button{display:block!important}.cat-library img{display:none}.film-header-actions{gap:8px}.film-header-actions button{font-size:13px}
 #studio-stickers{display:none!important}
+
+.film-header-actions{gap:clamp(8px,1.2vw,18px);align-items:center}
+.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-family:inherit;font-size:13px!important;font-weight:400;line-height:1.5;letter-spacing:1px;padding:6px 0;white-space:nowrap}
+.film-header-actions #location-design-button{position:static;inset:auto;transform:none;margin:0;border:0;background:none;box-shadow:none;opacity:1;color:inherit;display:block!important}
+@media(max-width:900px){.film-header{gap:12px;left:4%;right:4%}.film-header-actions{gap:10px}.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-size:11px!important;letter-spacing:0}}
+@media(max-width:580px){.film-header{gap:7px}.film-header-actions{gap:7px}.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-size:9px!important}}
