@@ -11,3 +11,5 @@
 .film-header-actions #location-design-button{position:static;inset:auto;transform:none;margin:0;border:0;background:none;box-shadow:none;opacity:1;color:inherit;display:block!important}
 @media(max-width:900px){.film-header{gap:12px;left:4%;right:4%}.film-header-actions{gap:10px}.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-size:11px!important;letter-spacing:0}}
 @media(max-width:580px){.film-header{gap:7px}.film-header-actions{gap:7px}.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-size:9px!important}}
+
+.film-header-actions{flex-wrap:wrap;justify-content:flex-end;max-width:85%}.film-header{align-items:flex-start}

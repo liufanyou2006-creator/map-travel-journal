@@ -1,4 +1,4 @@
-# 美国交换游记 / Map-first Travel Journal
+# 环球旅行游记 / Global Travel Journal
 
 A cinematic, map-first travel storytelling prototype, presented as a public portfolio demo with San Francisco and Seattle.
 
@@ -50,3 +50,7 @@ The included workflow deploys `dist/` using GitHub Pages. After uploading the re
 The original editor supports local media upload, collage layout, per-video volume, JSON backup/merge, city introductions and daily stops. This public demo exposes playback and local image/video editing, with two city palettes and soundtracks. An optional custom layout endpoint accepts media dimensions and text lengths, not the photos or original text. No secret key is requested by the browser. Browser-local edits are not cloud synchronization. Online map availability depends on the external map provider.
 
 Source is provided for portfolio review; no blanket license is granted for the original application code or branding. Third-party assets remain under their own licenses.
+
+## Global edition
+
+The overview now uses a world map. Shanghai and Beijing are editable sample cities alongside the two US samples. Sample dates are illustrative. Add cities and daily stops from the travel editor. Complete JSON backup, restore, non-destructive mobile merge, and per-trip/per-stop exports are available from the backup menu. Visitors' data remain browser-local; this is not cloud synchronization.
