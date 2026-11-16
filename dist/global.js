@@ -2,9 +2,10 @@
 // Extend the sample rather than removing any editing or backup tools.
 for(const c of [{key:'shanghai',name:'Shanghai',cn:'上海',coord:[121.4737,31.2304],poi:'The Bund',pcn:'外滩',point:[121.4903,31.2401],palette:'ny'},{key:'beijing',name:'Beijing',cn:'北京',coord:[116.4074,39.9042],poi:'Temple of Heaven',pcn:'天坛',point:[116.4066,39.8822],palette:'peach'}]){
  if(!CITIES.some(x=>x.key===c.key))CITIES.push({...c,code:c.key.toUpperCase(),aliases:[c.name,c.cn]});
- if(!state.trips.some(t=>t.cityKey===c.key))state.trips.push({id:c.key+'-demo',cityKey:c.key,name:c.name,cn:c.cn,coord:c.coord,date:'2026-05-01',endDate:'2026-05-02',totalDays:2,transport:'flight',note:'示例行程，可编辑日期、站点、配色和素材。',design:{palette:c.palette},music:{},stops:[{id:c.key+'-poi',name:c.poi,en:c.pcn,coord:c.point,day:1,note:'示例景点，可替换为自己的旅行记录。',media:[]}]});
+ if(!state.settings.globalExamplesRevision&&!state.trips.some(t=>t.cityKey===c.key))state.trips.push({id:c.key+'-demo',cityKey:c.key,name:c.name,cn:c.cn,coord:c.coord,date:'2026-05-01',endDate:'2026-05-02',totalDays:2,transport:'flight',note:'示例行程，可编辑日期、站点、配色和素材。',design:{palette:c.palette},music:{},stops:[{id:c.key+'-poi',name:c.poi,en:c.pcn,coord:c.point,day:1,note:'示例景点，可替换为自己的旅行记录。',media:[]}]});
 }
-for(const t of state.trips){if(!t.date){t.date=t.cityKey==='seattle'?'2026-10-01':'2026-09-27';t.endDate=t.date;t.totalDays=1;}}
+for(const t of state.trips){if(!state.settings.globalExamplesRevision&&['sf-demo','seattle-demo'].includes(t.id)&&!t.date){t.date=t.cityKey==='seattle'?'2026-10-01':'2026-09-27';t.endDate=t.date;t.totalDays=1;}}
+state.settings.globalExamplesRevision=1;
 const globalFileBefore=getFile;getFile=async function(id){const local=await globalFileBefore(id);if(local)return local;if(DEMO_FILES[id]){const r=await fetch(DEMO_FILES[id]);if(r.ok)return r.blob();}return null;};
 for(const [label,handler] of [['旅行日期 / 城市 / 站点',()=>openRoute()],['导入 / 导出 / 手机合并',()=>openBackup()],['行程导入',()=>openImport()],['地点音乐',()=>openMusic()]]){const button=document.createElement('button');button.textContent=label;button.onclick=handler;header.insertBefore(button,$('#fullscreen-top'));}
 document.querySelector('.film-intro h1').innerHTML='环球<br>旅行游记';document.title='环球旅行游记';
