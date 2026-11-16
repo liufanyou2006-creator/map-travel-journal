@@ -40,3 +40,6 @@ designStudioPageAI=async function(t,s){if(!demoDesignEndpoint){showAIConnection(
 
 PALETTES.sky.name='San Francisco · 海盐天蓝';
 const mapPaletteBeforeDemo=applyMapPalette;applyMapPalette=function(key){mapPaletteBeforeDemo(key);if(key==='mint-demo')$('#film-stage').classList.add('light-city');};
+
+// Keep editing actions in the header so they never collide with the intro CTA.
+header.insertBefore($('#location-design-button'),$('#fullscreen-top'));
