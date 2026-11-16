@@ -54,3 +54,7 @@ Source is provided for portfolio review; no blanket license is granted for the o
 ## Global edition
 
 The overview now uses a world map. Shanghai and Beijing are editable sample cities alongside the two US samples. Sample dates are illustrative. Add cities and daily stops from the travel editor. Complete JSON backup, restore, non-destructive mobile merge, and per-trip/per-stop exports are available from the backup menu. Visitors' data remain browser-local; this is not cloud synchronization.
+
+## City search and clean map view
+
+The cover uses a bundled world map. Header actions use short labels and collapse automatically in city views; the menu button restores every tool. Palette names describe colors, and each city chooses its own palette. Chinese search uses a bundled GeoNames index of 18,808 populated administrative seats and administrative areas, with Chinese aliases and coordinates. Worldwide search falls back to Open-Meteo geocoding. Search results remain editable; gazetteer completeness and network availability are not guaranteed.

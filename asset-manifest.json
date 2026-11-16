@@ -22,5 +22,7 @@
   "assets/san-francisco.jpg",
   "assets/seattle.jpg",
   "assets/topojson.min.js",
-  "assets/us.json"
+  "assets/us.json",
+  "assets/world.json",
+  "assets/china-cities.json"
 ]

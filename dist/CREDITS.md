@@ -34,3 +34,5 @@ All demo copy and itinerary labels are illustrative and do not reproduce private
 
 Seattle Kerry Park Skyline — CommunistSquared / CC0, https://commons.wikimedia.org/wiki/File:Seattle_Kerry_Park_Skyline.jpg . Resized for display.
 Seattle music: Dream Culture, Kevin MacLeod, CC BY 4.0; see bundled music/CREDITS.txt for source and license.
+
+China city search: derived from GeoNames CN gazetteer, https://download.geonames.org/export/dump/CN.zip ; CC BY 4.0. Filtered to cities, populated administrative seats and county administrative areas; aliases and WGS84 coordinates retained. This dataset does not warrant completeness. Worldwide fallback: Open-Meteo geocoding / GeoNames, https://open-meteo.com/en/docs/geocoding-api . World boundaries: world-atlas@2 from Natural Earth, https://github.com/topojson/world-atlas .
