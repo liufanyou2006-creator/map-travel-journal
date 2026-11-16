@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07111d"><meta name="description" content="从美国全景飞进城市街道，沿着自己的脚步，把三个月的旅行放成一部地图电影。"><title>美国交换游记</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/maplibre.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="cinema.css?v=continuous1"><link rel="stylesheet" href="studio.css?v=reading2">
+<script defer src="assets/d3.min.js"></script><script defer src="assets/topojson.min.js"></script><script defer src="assets/maplibre.js"></script><script defer src="app.js?v=pages1"></script><script defer src="cinema.js?v=continuous1"></script><script defer src="city-music.js?v=reading1"></script><script defer src="music.js?v=writing2"></script><script defer src="days.js"></script><script defer src="studio.js?v=continuous1"></script><script defer src="place-editor.js"></script><script defer src="date-editor.js"></script><script defer src="photo-motion.js?v=reading1"></script>
+<script defer src="photo-text.js?v=continuous1"></script><script defer src="city-intro.js?v=intro1"></script><script defer src="page-order.js?v=pages1"></script>
+<script defer src="showcase.js"></script><link rel="stylesheet" href="showcase.css"></head><body>
+<main id="film-stage" class="film-stage" aria-label="16:9 横屏地图旅行电影">
+ <div id="live-map" aria-label="可缩放的美国与城市街道地图"></div>
+ <svg id="usa-map" viewBox="0 0 1000 650" aria-label="美国地图备用底图" hidden></svg>
+ <div class="map-shade"></div><div class="film-grain"></div><div class="film-frame"></div>
+ <header class="film-header"><button class="film-brand" data-action="home" aria-label="回到美国全景"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="m27 11-5 13-11 5 5-13Z M20 0v6 M20 34v6"/></svg></button><div class="film-phase"><span class="phase active" data-phase="overview">美国全景</span><i></i><span class="phase" data-phase="city">城市街道</span><i></i><span class="phase" data-phase="stop">我的瞬间</span></div><div class="film-header-actions"><button data-action="route">我的路线</button><button data-action="import">导入行程 ↥</button><button data-action="music">音乐</button><button data-action="design" aria-label="画面风格">✳</button><button id="fullscreen-top" aria-label="全屏放映">⛶</button></div></header>
+ <section class="film-intro" id="film-intro"><h1>美国<br>交换游记</h1><button class="film-start" data-action="play"><span class="start-orbit"><b>▶</b></span><span>开始放映</span><i>↗</i></button></section>
+ 
+ <div class="map-status" id="map-status"><i></i><span id="map-status-text">正在展开街道地图</span></div>
+ <div class="film-scene-label" id="film-scene-label" hidden><div class="film-kicker" id="scene-kicker"></div><h2 id="scene-title"></h2><p class="handwritten" id="scene-subtitle"></p><span class="scene-coordinates" id="scene-coordinates"></span></div>
+ <div class="city-stop-rail" id="city-stop-rail" hidden></div>
+ <div class="scene-note handwritten" id="scene-note" hidden></div>
+ <div class="media-cinema" id="media-cinema" hidden><div class="media-backdrop"></div><div class="media-viewport" id="media-viewport"></div><div class="media-caption"><span id="media-location"></span><span id="media-counter"></span></div></div>
+ <div class="film-empty-hint" id="film-empty-hint" hidden><button data-action="upload" id="empty-add-media">＋ 添加照片 / 视频</button></div>
+
+ <div class="film-bottom"><div class="film-chapter-label"><span id="route-summary">七座城市 · 三个月的回忆</span><small id="demo-label">示例路线，等待你的真实故事</small></div><nav id="chapter-nav" class="film-city-timeline" aria-label="旅行城市时间线"></nav><button class="film-backup" data-action="backup" aria-label="备份完整日记">↧</button></div>
+ <div class="film-controls" id="playback" hidden><button id="pause-play" aria-label="暂停">Ⅱ</button><div class="film-current"><span id="play-label"></span><div class="film-progress-track"><i id="play-progress"></i></div></div><label class="speed-label"><select id="play-speed" aria-label="放映倍速"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="3">3×</option></select></label><button id="next-play" aria-label="跳过此片段">跳过 ↠</button><button id="fullscreen-play" aria-label="切换全屏">⛶</button><button id="exit-play" aria-label="结束放映">×</button></div>
+ <div class="film-ending" id="film-ending" hidden><h2>美国交换游记</h2><div><button class="film-small-primary" data-action="play">再看一遍 ↻</button><button class="film-small-outline" data-action="finish">回到美国全景</button></div></div>
+ <div class="film-shortcuts">SPACE 暂停 <span>·</span> → 跳过 <span>·</span> ESC 返回</div>
+ <div id="chapters" hidden></div><div id="home" hidden></div><button class="location-design-button" id="location-design-button" hidden>地点配色 / 排版 ✳</button>
+</main>
+<div class="rotate-hint">横屏 16:9 放映 · 建议旋转手机或在电脑全屏观看</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="context-menu" class="context-menu" hidden><button data-action="note">✎ 写下此刻</button><button data-action="upload">＋ 添加照片 / 视频</button><button data-action="stops">⌁ 编辑这段路线</button></div>
+<dialog id="editor"><div class="dialog-header"><div><div class="eyebrow" id="dialog-eyebrow">BEHIND YOUR JOURNEY</div><h2 id="dialog-title"></h2></div><button class="close-btn" id="close-dialog" aria-label="关闭">×</button></div><div id="dialog-body"></div></dialog>
+<input id="media-input" type="file" accept="image/*,video/*" multiple hidden><input id="music-input" type="file" accept="audio/*" hidden><input id="import-input" type="file" accept=".json,.csv,.ics,.txt" hidden>
+</body></html>
