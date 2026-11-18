@@ -1,0 +1,135 @@
+{
+  "origin": "https://travel-journal-interview-demo.goldenbean22.chatgpt.site/",
+  "files": [
+    {
+      "path": "assets/caveat-OFL.txt",
+      "bytes": 4385,
+      "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
+    },
+    {
+      "path": "assets/caveat.ttf",
+      "bytes": 403648,
+      "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988"
+    },
+    {
+      "path": "assets/china-cities.json",
+      "bytes": 3441008,
+      "sha256": "a76ca67417202eef706c298d5dfd6bc72620d421707fcc434152e6be12b39c11"
+    },
+    {
+      "path": "assets/d3.min.js",
+      "bytes": 280622,
+      "sha256": "912111098ea99503a6f4967361d2bbdc9dbf58cf9c678c8e27e5b02d1a07f0c1"
+    },
+    {
+      "path": "assets/demo/bridge-detail.jpg",
+      "bytes": 105567,
+      "sha256": "18f3fb6e1e7c8c868829290e3b95262c7d8920041d1dd56b5c52dbef40da56d0"
+    },
+    {
+      "path": "assets/demo/bridge-motion.mp4",
+      "bytes": 891156,
+      "sha256": "24c75abfcd0c5188fb3c03fcf487a8293dba81d13fd1f112951350910af74748"
+    },
+    {
+      "path": "assets/demo/golden-gate.jpg",
+      "bytes": 238592,
+      "sha256": "bfaaaa15fd727bc2919d2b86e1c881d8a7597f03777939b29aebc1b84dd6a206"
+    },
+    {
+      "path": "assets/demo/seattle.jpg",
+      "bytes": 240039,
+      "sha256": "2fd86a8c503e23355dbfeca6644c43eff85e6c62aaa1cc1216351b91f5c2c394"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "bytes": 247,
+      "sha256": "a46d2ddc3823d12dce96ef46b8a1a5ea7a313c062b021fdf28314d9d11939e63"
+    },
+    {
+      "path": "assets/longcang-OFL.txt",
+      "bytes": 4390,
+      "sha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc"
+    },
+    {
+      "path": "assets/longcang.ttf",
+      "bytes": 5162508,
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc"
+    },
+    {
+      "path": "assets/map-style.json",
+      "bytes": 22143,
+      "sha256": "aa2a282623d6b14c87294a940a800770b7e023160ff64e6b05aaedd42a5a8960"
+    },
+    {
+      "path": "assets/maplibre-LICENSE.txt",
+      "bytes": 5984,
+      "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
+    },
+    {
+      "path": "assets/maplibre.css",
+      "bytes": 69449,
+      "sha256": "1dae8925ee5906e442f0fd7028dded2884381b9acd7a780e5270025e09fc7c5e"
+    },
+    {
+      "path": "assets/maplibre.js",
+      "bytes": 1015688,
+      "sha256": "8eb4bc2a47ea76873517c9d3cd1c4c9f4172be2fa4c5aabaec038e5b92f4192f"
+    },
+    {
+      "path": "assets/music/catalog.json",
+      "bytes": 4466,
+      "sha256": "4ba6ac8f3abead220e3cda72b112048a8ac3edd9cbe85324263a57b22985bb8c"
+    },
+    {
+      "path": "assets/music/CREDITS.txt",
+      "bytes": 3073,
+      "sha256": "6da33cceef74b37752651a93eae9d404a402b573c66571ca72bcf690781f37cd"
+    },
+    {
+      "path": "assets/music/san-francisco.mp3",
+      "bytes": 2529126,
+      "sha256": "0b0aabe8e586403a9c957894e01e0f82383d49e00a2717e18fa4096b78ea6829"
+    },
+    {
+      "path": "assets/music/seattle.mp3",
+      "bytes": 4288761,
+      "sha256": "bafe34daf6f8c94fcccfbf3404db8cc71a0d0c02bdfb2350f9d96c0efccdffc5"
+    },
+    {
+      "path": "assets/patrick-OFL.txt",
+      "bytes": 4376,
+      "sha256": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1"
+    },
+    {
+      "path": "assets/patrick.ttf",
+      "bytes": 214772,
+      "sha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc"
+    },
+    {
+      "path": "assets/san-francisco.jpg",
+      "bytes": 238592,
+      "sha256": "bfaaaa15fd727bc2919d2b86e1c881d8a7597f03777939b29aebc1b84dd6a206"
+    },
+    {
+      "path": "assets/seattle.jpg",
+      "bytes": 240039,
+      "sha256": "2fd86a8c503e23355dbfeca6644c43eff85e6c62aaa1cc1216351b91f5c2c394"
+    },
+    {
+      "path": "assets/topojson.min.js",
+      "bytes": 7169,
+      "sha256": "25cd02ae486cc5063e0215a4e4cfb15de83700c87ac48bac4d57dc6aaf3ebb89"
+    },
+    {
+      "path": "assets/us.json",
+      "bytes": 842143,
+      "sha256": "145aaf5d1433352a6a1d8e86b5f149c7c653f9171baf14aaf75ee66575def1b0"
+    },
+    {
+      "path": "assets/world.json",
+      "bytes": 107761,
+      "sha256": "2516c915867c7baf18ddec727aec46c315541a07cfb3d79a6559b05d5e94eee8"
+    }
+  ]
+}

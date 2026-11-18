@@ -1,0 +1,4 @@
+.film-intro h1{white-space:pre-line;overflow-wrap:anywhere;max-width:10em;font-size:clamp(18px,6vw,92px)}
+.studio-ai-line{display:none!important}
+.film-header-actions button[hidden]{display:none!important}
+.film-ending h2{overflow-wrap:anywhere;max-width:85vw}

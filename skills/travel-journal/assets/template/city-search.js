@@ -1,0 +1,21 @@
+'use strict';
+let chinaCityData;
+const normalizeCityName=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[\s’'·.-]/g,'').replace(/[市县区]$/,'');
+async function searchWorldCities(query,signal){
+ const q=normalizeCityName(query);
+ chinaCityData ||= fetch('assets/china-cities.json').then(r=>{if(!r.ok)throw Error('城市资料暂未载入');return r.json();}).catch(e=>{chinaCityData=null;throw e;});
+ let local=[];try{local=(await chinaCityData).map(c=>({...c,score:c.aliases.some(a=>normalizeCityName(a)===q)?2:c.aliases.some(a=>normalizeCityName(a).includes(q))?1:0})).filter(c=>c.score).sort((a,b)=>b.score-a.score||Number(b.kind?.startsWith('P'))-Number(a.kind?.startsWith('P'))||b.population-a.population).slice(0,15);}catch{}
+ if(local.length)return local.map(c=>({...c,address:c.region+' · 中国'+(c.kind?.startsWith('ADM')?' · 行政区域':''),key:'geonames-'+c.id}));
+ const r=await fetch('https://geocoding-api.open-meteo.com/v1/search?'+new URLSearchParams({name:query,count:15,language:'zh',format:'json'}),{signal});if(!r.ok)throw Error('在线城市搜索暂不可用，请稍后再试。');
+ const data=await r.json();const english=await fetch('https://geocoding-api.open-meteo.com/v1/search?'+new URLSearchParams({name:query,count:15,language:'en',format:'json'}),{signal}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+ return (data.results||[]).map(c=>({key:'geonames-'+c.id,cn:c.name,name:english.results?.find(x=>x.id===c.id)?.name||c.name,coord:[c.longitude,c.latitude],address:[c.admin1,c.country].filter(Boolean).join(' · ')}));
+}
+const tripBeforeCitySearch=editTrip;
+editTrip=function(t){tripBeforeCitySearch(t);if(!$('#range-city'))return;const section=document.createElement('section');section.className='city-search-panel';section.innerHTML='<label>搜索城市<input id="city-query" placeholder="输入中文、英文或拼音，例如 成都 / Chengdu / Paris" maxlength="100"></label><button class="outline-btn" id="city-search-submit">搜索</button><div id="city-search-results" role="status" aria-live="polite"></div><p class="hint">中国城市支持本地检索；全球城市使用在线地名服务。选择结果自动填写名称和经纬度。数据：GeoNames / Open-Meteo，CC BY 4.0。</p>';
+ $('#dialog-body').prepend(section);$('#range-city').closest('label').firstChild.textContent='常用城市 / 手动填写';let pending;
+ const search=async()=>{const query=$('#city-query').value.trim();if(query.length<2){$('#city-search-results').textContent='请输入至少两个字或字母。';return;}pending?.abort();pending=new AbortController();const signal=pending.signal,results=$('#city-search-results'),button=$('#city-search-submit');button.disabled=true;results.textContent='正在搜索真实城市…';try{const cities=await searchWorldCities(query,signal);if(signal.aborted||!results.isConnected)return;results.innerHTML=cities.length?cities.map((c,i)=>'<button class="outline-btn city-result" data-city-result="'+i+'"><strong>'+esc(c.name)+' / '+esc(c.cn)+'</strong><small>'+esc(c.address)+' · '+c.coord[1].toFixed(4)+', '+c.coord[0].toFixed(4)+'</small></button>').join(''):'没有找到匹配城市，请输入完整名称或拼音，也可使用手动填写。';results.querySelectorAll('[data-city-result]').forEach(b=>b.onclick=()=>{const c=cities[+b.dataset.cityResult];if(!CITIES.some(x=>x.key===c.key))CITIES.push({...c,aliases:[c.cn,c.name],code:'CITY'});const select=$('#range-city');if(![...select.options].some(x=>x.value===c.key)){const option=new Option(c.cn+' / '+c.name,c.key);select.add(option,select.options.length-1);}select.value=c.key;$('#range-cn').value=c.cn;$('#range-en').value=c.name;$('#range-lat').value=c.coord[1];$('#range-lng').value=c.coord[0];results.textContent='已选：'+c.name+' / '+c.cn+' · '+c.address;});}catch(e){if(!signal.aborted&&results.isConnected)results.textContent=e.message||'搜索失败，请重试。';}finally{if(button.isConnected)button.disabled=false;}};
+ $('#city-search-submit').onclick=search;$('#city-query').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();search();}};
+};
+const paletteNames={citrus:'柠檬开心果',lilac:'薰衣草电紫',sky:'海盐天蓝',peach:'沙漠蜜桃',autumn:'金秋',sf:'深蓝金',seattle:'深绿薄荷',boston:'暖沙色',la:'蓝绿',dc:'浅绿',philadelphia:'灰白',ny:'浅粉',pink:'午夜蓝 / 雾粉',blue:'钴蓝 / 冷白',black:'纯黑 / 银白',green:'松绿 / 薄荷','mint-demo':'薄荷海湾'};
+Object.entries(paletteNames).forEach(([key,name])=>{if(PALETTES[key])PALETTES[key].name=name;});
+

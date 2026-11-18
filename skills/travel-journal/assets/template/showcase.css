@@ -1,0 +1,20 @@
+.film-backup,.location-design-button,#film-empty-hint,.context-menu,.film-scene-label .scene-coordinates{display:none!important}
+.city-marker span{font-size:20px}.city-marker small{font-size:13px}.stop-marker span{font-size:15px}.stop-marker small{font-size:12px}
+.film-shortcuts{opacity:.65}.film-header-actions button{white-space:nowrap}
+#editor a{color:#b9dff4}#editor p{line-height:1.8;margin-bottom:1em}
+
+.location-design-button{display:block!important}.cat-library img{display:none}.film-header-actions{gap:8px}.film-header-actions button{font-size:13px}
+#studio-stickers{display:none!important}
+
+.film-header-actions{gap:clamp(8px,1.2vw,18px);align-items:center}
+.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-family:inherit;font-size:13px!important;font-weight:400;line-height:1.5;letter-spacing:1px;padding:6px 0;white-space:nowrap}
+.film-header-actions #location-design-button{position:static;inset:auto;transform:none;margin:0;border:0;background:none;box-shadow:none;opacity:1;color:inherit;display:block!important}
+@media(max-width:900px){.film-header{gap:12px;left:4%;right:4%}.film-header-actions{gap:10px}.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-size:11px!important;letter-spacing:0}}
+@media(max-width:580px){.film-header{gap:7px}.film-header-actions{gap:7px}.film-header-actions button,.film-header-actions button:nth-last-child(-n+2){font-size:9px!important}}
+
+.film-header-actions{flex-wrap:wrap;justify-content:flex-end;max-width:85%}.film-header{align-items:flex-start}
+
+.toolbar-toggle{display:none}.tools-folded .film-header-actions{display:none}.tools-folded .toolbar-toggle{display:block;margin-left:auto;font:18px Arial;padding:7px 10px;color:#e4edf4;background:#0b1c2ad9;border:1px solid #c5d8e13b;border-radius:6px}.tools-folded.tools-expanded .film-header-actions{display:flex;background:#102232f2;border:1px solid #abc6d84d;border-radius:8px;padding:10px 15px;box-shadow:0 8px 30px #0004;max-width:85%}.tools-folded.tools-expanded .film-header-actions button{color:#e4edf4!important;text-shadow:none!important}.film-header-actions{flex-wrap:nowrap;max-width:85%}.film-header-actions button{min-width:2em}
+
+.city-search-panel{padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:18px}.city-result{display:block;width:100%;text-align:left;margin-top:8px}.city-result small{display:block;opacity:.7;margin-top:4px}#city-search-results{max-height:260px;overflow:auto;margin-top:10px}
+
