@@ -1,0 +1,64 @@
+{
+  "id": "coastal-weekend-example",
+  "title": "沿着海岸\n慢慢走",
+  "subtitle": "旧金山 → 西雅图 · 虚构行程示例",
+  "palette": "sky",
+  "trips": [
+    {
+      "id": "sf-weekend",
+      "name": "San Francisco",
+      "cn": "旧金山",
+      "coord": [-122.4194, 37.7749],
+      "date": "2026-05-01",
+      "endDate": "2026-05-02",
+      "transport": "train",
+      "note": "一份把地图、影像和文字放在一起的旅行手账。\n这里使用公开素材和虚构行程，展示你可以如何记录自己的回忆。",
+      "music": { "src": "asset:music/san-francisco.mp3", "name": "Easy Lemon — Kevin MacLeod / CC BY 4.0" },
+      "stops": [
+        {
+          "id": "california-street",
+          "name": "加利福尼亚街",
+          "en": "California Street",
+          "coord": [-122.4128, 37.7913],
+          "day": 1,
+          "note": "示例第一天：从街道开始，让沿途的片段慢慢展开。你可以在编辑器里替换这一段文字。"
+        },
+        {
+          "id": "golden-gate",
+          "name": "金门大桥",
+          "en": "Golden Gate Bridge",
+          "coord": [-122.4783, 37.8199],
+          "day": 2,
+          "note": "示例第二天：海湾与悬索桥。\n照片来自 Wikimedia Commons，动态片段由照片制作，均不是作者的实拍旅行记录。",
+          "media": [
+            { "src": "asset:demo/golden-gate.jpg", "name": "Golden Gate Bridge — Masur / CC BY-SA 3.0", "ratio": 1.78 },
+            { "src": "asset:demo/bridge-detail.jpg", "name": "Bridge detail — crop of Masur photograph", "ratio": 1.78 },
+            { "src": "asset:demo/bridge-motion.mp4", "name": "照片动态演示，非实拍视频", "volume": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seattle-weekend",
+      "name": "Seattle",
+      "cn": "西雅图",
+      "coord": [-122.3321, 47.6062],
+      "date": "2026-05-03",
+      "transport": "flight",
+      "palette": "lilac",
+      "note": "另一座城市，另一种配色。\n这份虚构示例展示同一份手账中的第二段旅行。",
+      "music": { "src": "asset:music/seattle.mp3", "name": "Dream Culture — Kevin MacLeod / CC BY 4.0" },
+      "stops": [
+        {
+          "id": "kerry-park",
+          "name": "凯瑞公园",
+          "en": "Kerry Park",
+          "coord": [-122.3601, 47.6295],
+          "day": 1,
+          "note": "把照片放进这一页，也把想记住的话留在旁边。\n公开示例照片：CommunistSquared / CC0。",
+          "media": [{ "src": "asset:demo/seattle.jpg", "name": "Seattle skyline — CommunistSquared / CC0", "ratio": 1.78 }]
+        }
+      ]
+    }
+  ]
+}

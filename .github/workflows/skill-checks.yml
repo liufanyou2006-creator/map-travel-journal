@@ -1,0 +1,26 @@
+name: Travel journal skill checks
+on:
+  push:
+    paths: ['skills/travel-journal/**', 'tests/travel-journal.test.mjs', '.github/workflows/skill-checks.yml']
+  pull_request:
+    paths: ['skills/travel-journal/**', 'tests/travel-journal.test.mjs', '.github/workflows/skill-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate generator behavior
+        run: node --test tests/travel-journal.test.mjs
+      - name: Check template JavaScript syntax
+        run: |
+          for file in skills/travel-journal/assets/template/*.js skills/travel-journal/assets/template/*.mjs skills/travel-journal/scripts/*.mjs; do
+            node --check "$file"
+          done
+      - name: Validate example manifest
+        run: node skills/travel-journal/scripts/build-journal.mjs --input skills/travel-journal/examples/coastal-weekend.json --check

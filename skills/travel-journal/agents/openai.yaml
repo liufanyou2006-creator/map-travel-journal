@@ -1,0 +1,4 @@
+interface:
+  display_name: "旅行手账 / Travel Journal"
+  short_description: "把行程、照片和日记生成可编辑的地图旅行手账网站，支持放映与本地备份"
+  default_prompt: "使用 $travel-journal，把我提供的行程、照片和文字做成可编辑的旅行手账网站。"

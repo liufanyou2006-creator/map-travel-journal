@@ -1,5 +1,19 @@
 # 环球旅行游记 / Global Travel Journal
 
+## 旅行手账 Skill / Travel Journal Skill
+
+把行程、自己的照片/视频和日记交给 AI，生成一份可编辑、可放映的地图旅行手账网站，也能继续追加行程和素材。
+
+**[查看 Skill、安装方法和使用示例 →](skills/travel-journal/README.md)** · [Skill 指令](skills/travel-journal/SKILL.md) · [示例行程](skills/travel-journal/examples/coastal-weekend.json)
+
+```text
+使用 $travel-journal，把我的三天行程和 photos 文件夹做成浅蓝色旅行手账，保留原来的日记文字。
+```
+
+第一版提供完整网站模板、行程生成器、独立的浏览器保存空间、媒体打包、备份导入和示例。生成与本地规则排版不需要 API Key；首次构建需要联网下载并校验公开模板素材。浏览器编辑不等于云同步，输出是交互网站。
+
+---
+
 A cinematic, map-first travel storytelling prototype, presented as a public portfolio demo with San Francisco and Seattle.
 
 **Live demo:** https://travel-journal-interview-demo.goldenbean22.chatgpt.site/
@@ -58,3 +72,4 @@ The overview now uses a world map. Shanghai and Beijing are editable sample citi
 ## City search and clean map view
 
 The cover uses a bundled world map. Header actions use short labels and collapse automatically in city views; the menu button restores every tool. Palette names describe colors, and each city chooses its own palette. Chinese search uses a bundled GeoNames index of 18,808 populated administrative seats and administrative areas, with Chinese aliases and coordinates. Worldwide search falls back to Open-Meteo geocoding. Search results remain editable; gazetteer completeness and network availability are not guaranteed.
+
